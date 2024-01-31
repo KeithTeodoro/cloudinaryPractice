@@ -1,0 +1,165 @@
+#head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	h1 {
+		color: #ffff;
+	}
+}
+
+#body-modal {
+	display: flex;
+	flex-direction: column;
+	margin: 5px;
+}
+
+#footer-modal {
+	display: flex;
+	margin: 5px;
+	gap: 5px;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+#container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#images-container {
+	width: 90%;
+	max-width: 80rem;
+	margin: 5px;
+	columns: 4;
+	column-gap: 10px;
+}
+
+@media (max-width: 1080px) {
+	#images-container {
+		flex-direction: column;
+		columns: 3;
+	}
+}
+
+@media (max-width: 720px) {
+	#images-container {
+		flex-direction: column;
+		columns: 2;
+	}
+}
+
+@media (max-width: 420px) {
+	#images-container {
+		flex-direction: column;
+		columns: 1;
+	}
+}
+
+#addBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	height: 50px;
+	width: 120px;
+	font-family: sans-serif;
+	font-size: 16px;
+	padding: 5px 20px;
+	border-radius: 5px;
+	background: #255784;
+	color: #fff;
+	transition: all 0.2s ease;
+}
+
+#addBtn:active {
+	transform: scale(0.96);
+}
+
+#seeMore {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 15px;
+}
+
+a {
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	border-radius: 5px;
+	padding: 10px;
+	color: #ffff;
+	overflow: hidden;
+	letter-spacing: 2px;
+	font-size: 24px;
+	transition: 0.2s;
+}
+
+a:hover {
+	color: #000000;
+	background: #ffffff;
+	box-shadow: 0 0 10px #ffffff, 0 0 40px #ffffff, 0 0 80px #ffffff;
+	transition-delay: 1s;
+}
+
+a span {
+	position: absolute;
+	display: block;
+}
+
+a span:nth-child(1) {
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #ffffff);
+}
+
+a:hover span:nth-child(1) {
+	left: 100%;
+	transition: 1s;
+}
+
+a span:nth-child(2) {
+	top: -100%;
+	right: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(180deg, transparent, #ffffff);
+}
+
+a:hover span:nth-child(2) {
+	top: 100%;
+	transition: 1s;
+	transition-delay: 0.25s;
+}
+
+a span:nth-child(3) {
+	bottom: 0;
+	right: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(270deg, transparent, #ffffff);
+}
+
+a:hover span:nth-child(3) {
+	right: 100%;
+	transition: 1s;
+	transition-delay: 0.5s;
+}
+
+a span:nth-child(4) {
+	bottom: -100%;
+	left: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(360deg, transparent, #ffffff);
+}
+
+a:hover span:nth-child(4) {
+	bottom: 100%;
+	transition: 1s;
+	transition-delay: 0.75s;
+}
