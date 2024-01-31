@@ -36,6 +36,14 @@
 	column-gap: 10px;
 }
 
+.images {
+	transition: 0.3s ease;
+}
+
+.images:hover {
+	transform: scale(1.2);
+}
+
 dialog:modal {
 	border-radius: 10px;
 	width: 20%;

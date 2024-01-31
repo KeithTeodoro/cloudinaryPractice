@@ -67,7 +67,9 @@ function App() {
 
 	const imagesList = image
 		.slice(0, displayedImages)
-		.map((imge) => <img key={imge.public_id} src={imge.url} />);
+		.map((imge) => (
+			<img key={imge.public_id} src={imge.url} className="images" />
+		));
 
 	const seeMoreImages = () => {
 		setDisplayedImages((prevCount) => prevCount + 10);
