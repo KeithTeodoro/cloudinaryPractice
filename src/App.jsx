@@ -8,6 +8,7 @@ import Modal from './component/Modal.jsx';
 function App() {
 	const [imageSelected, setImageSelected] = useState(null);
 	const [image, setImages] = useState([]);
+	const [imageName, setImageName] = useState('');
 	const [displayedImages, setDisplayedImages] = useState(10);
 
 	// const uploadImage = () => {
@@ -25,10 +26,6 @@ function App() {
 	//     setImageUploaded(true);
 	//   });
 	// };
-	const handleImageChange = (e) => {
-		const selectedFile = e.target.files[0];
-		setImageSelected(selectedFile);
-	};
 
 	const uploadImage = () => {
 		const formData = new FormData();
@@ -78,6 +75,12 @@ function App() {
 
 	const showSeeMoreButton = displayedImages < image.length;
 
+	const handleImageChange = (e) => {
+		const selectedFile = e.target.files[0];
+		setImageSelected(selectedFile);
+		setImageName(selectedFile.name);
+	};
+
 	return (
 		<>
 			<div id="head">
@@ -89,7 +92,12 @@ function App() {
 			<Modal ref={modal}>
 				<div id="body-modal">
 					<h3>Choose a file to upload</h3>
-					<input type="file" onChange={handleImageChange} />
+					<div className="file-input-container">
+						<label className="custom-button">
+							<input type="file" onChange={handleImageChange} id="fileInput" />
+							{imageName || 'Choose File'}
+						</label>
+					</div>
 				</div>
 				<div id="footer-modal">
 					<button onClick={uploadImage}>Upload</button>
